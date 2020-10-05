@@ -5,41 +5,29 @@ import axios from "axios";
 import store from "../redux/store";
 import { DATASET_ADD, DATASET_SELECTED } from "../redux/actions";
 import Datasets from "../redux/Dataset";
+// import MNIST_IMAGE from "../images/MNIST.png";
+// import NLP_IMAGE from "../images/NLP.png";
+// import TWITTER_IMAGE from "../images/Twitter.jpg";
 
 const Homepage = () => {
   // objects for function function to run
+  // eslint-disable-next-line
   const [showHoverText, setShowHoverText] = useState(false);
   const [showParameter, setShowParameter] = useState(false);
-  //---------------------------//-----------------------------------------//
 
-  //---------------------------//-----------------------------------------//
-  // gets data from Dataset.jsx and adds to state
   useEffect(() => {
-    // console.log(Datasets);
     Datasets.map((dataset) => store.dispatch(DATASET_ADD(`${dataset}`)));
   }, []);
-  //---------------------------//-----------------------------------------//
 
-  //---------------------------//-----------------------------------------//
-  // state of dataset is stored
   const [dataset, setDataset] = useState("");
 
-  //---------------------------//-----------------------------------------//
-  // store.subscribe(() => {
-  //   console.log("Store changed!", store.getState());
-  // });
-  //---------------------------//-----------------------------------------//
-
-  //---------------------------//-----------------------------------------//
   //Gets value after clicking button and makes state selected true for it
   function getReq(e: any) {
     setDataset(dataset + `${e.target.value}`);
     setShowParameter(true);
     store.dispatch(DATASET_SELECTED(`${e.target.value}`));
-  };
-  //---------------------------//-----------------------------------------//
+  }
 
-  //---------------------------//-----------------------------------------//
   //sends get request to the server with dataset value as JSON
   //Stores the server response
   const getDataAxios = async () => {
@@ -52,21 +40,14 @@ const Homepage = () => {
     //console.log(response.data);
     // To be redirected when new pages will be ready
   };
-  //---------------------------//-----------------------------------------//
 
-  //---------------------------------------------------------------------//
   //Reset of dataset so that string do not get add up
   function getUrl() {
     getDataAxios();
-    // console.log(dataset);
     setDataset((dataset) => "");
   }
-  //---------------------------------------------------------------------//
 
-  //---------------------------//-----------------------------------------//
-  //this function will run after dataset is changed
   useEffect(getUrl, [dataset]);
-  //---------------------------//-----------------------------------------//
 
   return (
     <div className="Startpage">
@@ -90,7 +71,7 @@ const Homepage = () => {
               Choose which dataset are you want to use?
             </h1>
           </div>
-          {showHoverText && (
+          {
             <div className="hoverText">
               {Datasets.map((dataset) => (
                 <Button
@@ -106,7 +87,18 @@ const Homepage = () => {
                 </Button>
               ))}
             </div>
-          )}
+          }{" "}
+          {/* {showHoverText && (
+            <div className="Homepage--images">
+              <img src={MNIST_IMAGE} alt="MNIST" className="dataset--image" />
+              <img src={NLP_IMAGE} alt="NLP" className="dataset--image" />
+              <img
+                src={TWITTER_IMAGE}
+                alt="TWITTER"
+                className="dataset--image"
+              />
+            </div>
+          )} */}
           <h1 onMouseLeave={() => setShowHoverText(false)} className="exitItem">
             Hover Above To select Your Dataset
           </h1>

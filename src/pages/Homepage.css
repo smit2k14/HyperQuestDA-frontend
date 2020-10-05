@@ -1,4 +1,5 @@
-.Homepage, .Parameters{
+.Homepage,
+.Parameters {
   text-align: center;
   padding-top: 200px;
   background: url("../images/Homepage_background.png") center bottom no-repeat;
@@ -18,4 +19,16 @@
 .exitItem {
   padding-top: 50px;
   font-size: 25px;
+}
+
+.Homepage--images {
+  display: flex;
+  flex-direction: row;
+}
+
+.dataset--image {
+  height: 200px;
+  width: 200px;
+  margin: 40px;
+  margin-left: 150px;
 }
