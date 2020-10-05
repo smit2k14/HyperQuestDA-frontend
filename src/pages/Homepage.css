@@ -1,7 +1,7 @@
 .Homepage, .Parameters{
   text-align: center;
   padding-top: 200px;
-  background: url("Homepage_background.png") center bottom no-repeat;
+  background: url("../images/Homepage_background.png") center bottom no-repeat;
   background-size: cover;
   min-height: 700px;
 }

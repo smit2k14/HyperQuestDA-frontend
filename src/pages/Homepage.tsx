@@ -2,9 +2,9 @@ import React, { useState, useEffect } from "react";
 import "./Homepage.css";
 import Button from "react-bootstrap/Button";
 import axios from "axios";
-import store from "./store";
-import { DATASET_ADD, DATASET_SELECTED } from "./actions";
-import Datasets from "./Dataset";
+import store from "../redux/store";
+import { DATASET_ADD, DATASET_SELECTED } from "../redux/actions";
+import Datasets from "../redux/Dataset";
 
 const Homepage = () => {
   // objects for function function to run
@@ -32,7 +32,7 @@ const Homepage = () => {
 
   //---------------------------//-----------------------------------------//
   //Gets value after clicking button and makes state selected true for it
-  const getReq = (e) => {
+  function getReq(e: any) {
     setDataset(dataset + `${e.target.value}`);
     setShowParameter(true);
     store.dispatch(DATASET_SELECTED(`${e.target.value}`));
