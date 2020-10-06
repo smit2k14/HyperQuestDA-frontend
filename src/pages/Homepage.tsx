@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "../Styles/Homepage.css";
+import "../styles/Homepage.css";
 import Button from "react-bootstrap/Button";
 import axios from "axios";
 import store from "../redux/store";
