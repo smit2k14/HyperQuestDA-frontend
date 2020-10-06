@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "./Homepage.css";
+import "../Styles/Homepage.css";
 import Button from "react-bootstrap/Button";
 import axios from "axios";
 import store from "../redux/store";
@@ -99,9 +99,10 @@ const Homepage = () => {
               />
             </div>
           )} */}
-          <h1 onMouseLeave={() => setShowHoverText(false)} className="exitItem">
+          {/* Exiting of the below element shows the hidden items, commented for now */}
+          {/* <h1 onMouseLeave={() => setShowHoverText(false)} className="exitItem">
             Hover Above To select Your Dataset
-          </h1>
+          </h1> */}
         </div>
       )}
     </div>

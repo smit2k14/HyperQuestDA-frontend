@@ -3,7 +3,7 @@
 //
 
 import React from "react";
-import "./Navbar.css";
+import "../Styles/Navbar.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 const Navbar = () => {
