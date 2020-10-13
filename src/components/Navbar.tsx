@@ -36,6 +36,9 @@ const Navbar = () => {
               <li>
                 <a href="contact">Contact Us</a>
               </li>
+              <li>
+                <a href="login">Login</a>
+              </li>
             </ul>
           </nav>
         </div>
